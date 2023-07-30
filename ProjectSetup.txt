@@ -1,0 +1,13 @@
+npm init
+npm install express
+npm install -g nodemon
+npm install dotenv --save
+npm install mongoose
+npm install express-async-errors --save
+npm install http-status-codes --save
+npm install jsonwebtoken
+npm install bcryptjs
+
+
+
+npx nodemon app.js

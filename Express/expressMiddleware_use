@@ -1,0 +1,48 @@
+const express = require('express');
+const app = express();
+//const logger = require('./logger')
+const authorize = require('./authorize')
+
+app.use(authorize)
+
+//app.use([logger,authorize])
+
+//app.use('/api',logger)
+
+// req => Middlewrae => res
+/*
+const logger =(req, res, next) => {
+    const method = req.method;
+    const url = req.url;
+    const time = new Date().getFullYear();
+    console.log(`Method : ${method} , Url : ${url} , Year : ${time}`);
+    next();
+}
+*/
+
+/*
+app.get('/', (req, res) => {
+    const method = req.method;
+    const url = req.url;
+    const time = new Date().getFullYear();
+    console.log(`Method : ${method} , Url : ${url} , Year : ${time}`)
+    res.send('Home')
+})
+*/
+
+app.get('/', (req, res) => {
+    res.send('Home')
+})
+
+app.get('/about', (req, res) => {
+    res.send('About')
+})
+
+app.all('*',(req,res) =>{
+    res.status(404).send('<h1> Resource not found </h1>')
+})
+
+app.listen(8000,() => {
+    console.log('server is listening at 8000')
+})
+
