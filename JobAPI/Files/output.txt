@@ -1,0 +1,1 @@
+This is write operation . Current Date : function now() { [native code] }

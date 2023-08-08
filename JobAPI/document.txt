@@ -1,0 +1,100 @@
+Status:
+-------------
+Pending , Submitted , Approved, Reject, Assign Back
+
+
+SEVIS - Approved , Reject , Assign Back
+Advisor - Pending , Submitted
+
+View Filter:
+-----------------
+Pending - Advisor 
+Submitted , Approved, Reject, Assign Back - Advisor , SEVIS
+
+Status Authorization 
+---------------------
+
+Advisor - Pending , Submitted
+SEVIS - Approved, Reject, Assign Back
+
+
+
+
+APIS
+========================
+Register :
+----------------
+http://localhost:3000/api/vi/auth/register
+{
+    "name": "lokesh",
+    "email": "lokeshp@e.com",
+    "password": "secretkey",
+    "role": "SEVIS"
+    
+}
+
+
+Login:
+-----------
+Authorization Bearer 
+{
+   "email": "sreejithk@e.com",
+    "password": "secretkey"
+  
+}
+
+Create Job
+-----------
+http://localhost:3000/api/vi/jobs
+Authorization Bearer 
+{
+    "company":"Tesla",
+    "position":"SDET"
+}
+
+Get jobs
+-----------
+http://localhost:3000/api/vi/jobs
+Authorization Bearer 
+
+Get jobs
+------------
+http://localhost:3000/api/vi/jobs/64cbba8607286ec3c6002653
+Authorization Bearer 
+
+Update Job
+-----------
+http://localhost:3000/api/vi/jobs/64c3d5ae7f501e04386d65b0
+Authorization Bearer 
+
+{
+     "company":"facebook global",
+    "position":"developer"
+}
+
+Delete Job
+----------------
+http://localhost:3000/api/vi/jobs/64ca45d73dcd3055a9fb4273
+Authorization Bearer 
+
+Upload Manager
+-----------------
+http://localhost:3000/api/vi/jobs/uploadManager/64cbba8607286ec3c6002653
+Authorization Bearer 
+
+
+SEVIS Manager
+-----------------
+setJobStatus
+---------------
+http://localhost:3000/api/vi/sevis/64cb895f1f8b10c7c307c57c
+Authorization Bearer 
+{
+    "status":"approve",
+    "ApproverComments":"All Validation Suceessful"
+}
+
+GET jobs
+
+GET Job
+

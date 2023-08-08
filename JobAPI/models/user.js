@@ -21,6 +21,14 @@ const UserSchema = new mongoose.Schema({
         minlength: 6,
         //maxlength: 50,
     },
+    role:{
+        type: String,
+        required: [true, 'Provide Role'],
+        enum: {
+            values: ['Advisor','SEVIS','User'],
+            message:'{VALUE} is not suppported'
+        }
+    },
 })
 
 UserSchema.pre('save', async function (next) {
@@ -42,7 +50,6 @@ UserSchema.methods.createJWT = function() {
         expiresIn: process.env.JWT_LIFETIME,
     })
 } 
-
 
 UserSchema.methods.comparePassword = async function(candidatePassword){
     const isMatch = await bcrypt.compare(candidatePassword, this.password)

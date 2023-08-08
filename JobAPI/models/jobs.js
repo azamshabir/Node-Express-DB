@@ -13,15 +13,33 @@ const JobSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        enum: ['interview', 'decline', 'pending'],
-        default: 'pending'
+        enum: ['Pending' , 'Submitted' , 'Approved', 'Reject', 'Assign Back'], 
+        default: 'Pending'
     },
     createdBy:{
         type: mongoose.Types.ObjectId,
         ref:'User',
         required:[true,'Provide User Name']
-    }
-}, {timestamps:true})
+    },
+    ApprovedBy:{
+        type: mongoose.Types.ObjectId,
+        //ref:'User',
+        //required:[true,'Provide User Name'],
+        default: null
+    },
+    ApprovedDate:{
+        type: Date,
+        //ref:'User',
+        //required:[true,'Provide User Name'],
+        default: null
+    },
+    ApproverComments:{
+        type: String,
+        default: null,
+    },
+},{timestamps:true},
+
+)
 
 
 module.exports = mongoose.model('Job',JobSchema)

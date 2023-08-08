@@ -1,6 +1,7 @@
 const User = require('../models/User')
 const jwt = require('jsonwebtoken')
 const { UnauthenticatedError } = require('../errors')
+//const { Forbidden } = require('../errors')
 
 
 const auth = (req, res, next) => {
@@ -23,5 +24,6 @@ const auth = (req, res, next) => {
         throw new UnauthenticatedError('Authentication Invalid')
     }
 }
+
 
 module.exports = auth

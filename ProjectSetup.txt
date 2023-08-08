@@ -7,6 +7,7 @@ npm install express-async-errors --save
 npm install http-status-codes --save
 npm install jsonwebtoken
 npm install bcryptjs
+npm pdfkipt
 
 
 
